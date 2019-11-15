@@ -1,2 +1,2 @@
-# py-mahjongg-scoring
+# mahjongg-scoring
 Python application for calculating final scores for Mah-Jongg (Chinese official rules).
