@@ -4,7 +4,7 @@ from mahjonggscoring import Hand
 
 class TestBigFourWinds(unittest2.TestCase):
 	def setUp(self):
-		data = [["S", "S", "S"], ["E", "E", "E"], ["W", "W", "W"], ["N", "N", "N"], ["3#", "3#"]]
+		data = [["S", "S", "S"], ["E", "E", "E", "E"], ["W", "W", "W"], ["N", "N", "N"], ["3#", "3#"]]
 		hand = Hand(data)
 		self.examination = BigFourWinds(hand)
 		self.passed = self.examination.evaluate()

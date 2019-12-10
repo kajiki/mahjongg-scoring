@@ -4,7 +4,7 @@ from mahjonggscoring import Hand
 
 class TestBigThreeDragons(unittest2.TestCase):
 	def setUp(self):
-		data = [["C", "C", "C"], ["F", "F", "F"], ["B", "B", "B"], ["5#", "6#", "7#"], ["3#", "3#"]]
+		data = [["C", "C", "C"], ["F", "F", "F"], ["B", "B", "B", "B"], ["5#", "6#", "7#"], ["3#", "3#"]]
 		hand = Hand(data)
 		self.examination = BigThreeDragons(hand)
 		self.passed = self.examination.evaluate()

@@ -10,7 +10,7 @@ class BigFourWinds:
 		def get_honors(tile):
 			honor = getattr(tile, "honor", "")
 			return honor
-		honors = list(map(get_honors, self.hand.pungs))
+		honors = list(map(get_honors, self.hand.pungs + self.hand.kongs))
 		return honors
 	
 	def examine_standard_hand(self):
