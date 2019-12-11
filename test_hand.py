@@ -33,5 +33,23 @@ class TestHand(unittest2.TestCase):
 		not_kongs = hand.pair + hand.pungs + hand.chows + hand.knitted
 		self.assertEqual(len(not_kongs), 4)
 	
+	def test_knitted_in_knitted_list(self):
+		hand = Hand([["2/", "5/", "8/"], ["1#", "4#", "7#"], ["3●", "6●", "9●"], ["3/", "3/", "3/"], ["4/", "4/"]])
+		self.assertEqual(len(hand.knitted), 3)
+	
+	def test_knitted_not_elsewhere(self):
+		hand = Hand([["2/", "5/", "8/"], ["1#", "4#", "7#"], ["3●", "6●", "9●"], ["3/", "3/", "3/"], ["4/", "4/"]])
+		not_knitted = hand.pair + hand.pungs + hand.chows + hand.kongs
+		self.assertEqual(len(not_knitted), 2)
+		
+	def test_pair_in_pair_list(self):
+		hand = Hand([["1/", "2/", "3/"], ["4●", "5●", "6●"], ["7/", "8/", "9/"], ["2●", "2●", "2●"], ["5#", "5#"]])
+		self.assertEqual(len(hand.pair), 1)
+	
+	def test_pair_not_elsewhere(self):
+		hand = Hand([["1/", "1/", "1/"], ["2/", "2/", "2/"], ["3/", "3/", "3/"], ["S", "S", "S", "S"], ["C", "C"]])
+		not_pair = hand.pungs + hand.kongs + hand.chows + hand.knitted
+		self.assertEqual(len(not_pair), 4)
+	
 if __name__ == '__main__':
 	unittest2.main()
