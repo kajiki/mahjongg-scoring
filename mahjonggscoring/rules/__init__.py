@@ -5,10 +5,13 @@ if __package__.find(".") == -1:
 	from rules.big_four_winds import BigFourWinds
 	from rules.big_three_dragons import BigThreeDragons
 	from rules.concealed_hand import ConcealedHand
+	from rules.full_flush import FullFlush
 	from rules.fully_concealed_hand import FullyConcealedHand
 	from rules.knitted_straight import KnittedStraight
 	from rules.melded_hand import MeldedHand
 	from rules.melded_kong import MeldedKong
+	from rules.no_honor_tiles import NoHonorTiles
+	from rules.pung_of_terminals_or_honors import PungOfTerminalsOrHonors
 	from rules.pure_terminal_chows import PureTerminalChows
 	from rules.seven_shifted_pairs import SevenShiftedPairs
 	from rules.thirteen_orphans import ThirteenOrphans
@@ -22,18 +25,19 @@ if __package__.find(".") == -1:
 	from rules.winning_tile import LastTileClaim
 	from rules.winning_tile import OutWithReplacementTile
 	from rules.winning_tile import RobbingTheKong
-	from rules.no_honor_tiles import NoHonorTiles
-	from rules.full_flush import FullFlush
 else:
 	from mahjonggscoring.rules.all_chows import AllChows
 	from mahjonggscoring.rules.all_green import AllGreen
 	from mahjonggscoring.rules.big_four_winds import BigFourWinds
 	from mahjonggscoring.rules.big_three_dragons import BigThreeDragons
 	from mahjonggscoring.rules.concealed_hand import ConcealedHand
+	from mahjonggscoring.rules.full_flush import FullFlush
 	from mahjonggscoring.rules.fully_concealed_hand import FullyConcealedHand
 	from mahjonggscoring.rules.knitted_straight import KnittedStraight
 	from mahjonggscoring.rules.melded_hand import MeldedHand
 	from mahjonggscoring.rules.melded_kong import MeldedKong
+	from mahjonggscoring.rules.no_honor_tiles import NoHonorTiles
+	from mahjonggscoring.rules.pung_of_terminals_or_honors import PungOfTerminalsOrHonors
 	from mahjonggscoring.rules.pure_terminal_chows import PureTerminalChows
 	from mahjonggscoring.rules.seven_shifted_pairs import SevenShiftedPairs
 	from mahjonggscoring.rules.thirteen_orphans import ThirteenOrphans
@@ -47,8 +51,6 @@ else:
 	from mahjonggscoring.rules.winning_tile import LastTileClaim
 	from mahjonggscoring.rules.winning_tile import OutWithReplacementTile
 	from mahjonggscoring.rules.winning_tile import RobbingTheKong
-	from mahjonggscoring.rules.no_honor_tiles import NoHonorTiles
-	from mahjonggscoring.rules.full_flush import FullFlush
 
 class RuleList:
 	RULES = {\
@@ -103,7 +105,7 @@ class RuleList:
 		#OutsideHand: OutsideHand.points,\
 		OutWithReplacementTile: OutWithReplacementTile.points,\
 		#PrevalentWind: PrevalentWind.points,\
-		#PungOfTerminalsOrHonors: PungOfTerminalsOrHonors.points,\
+		PungOfTerminalsOrHonors: PungOfTerminalsOrHonors.points,\
 		#PureDoubleChow: PureDoubleChow.points\
 		#PureShiftedChows: PureShiftedChows.points,\
 		#PureShiftedPungs: PureShiftedPungs.points,\
