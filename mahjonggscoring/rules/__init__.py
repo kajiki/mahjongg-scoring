@@ -11,8 +11,10 @@ if __package__.find(".") == -1:
 	from rules.melded_hand import MeldedHand
 	from rules.melded_kong import MeldedKong
 	from rules.no_honor_tiles import NoHonorTiles
+	from rules.prevalent_wind import PrevalentWind
 	from rules.pung_of_terminals_or_honors import PungOfTerminalsOrHonors
 	from rules.pure_terminal_chows import PureTerminalChows
+	from rules.seat_wind import SeatWind
 	from rules.seven_shifted_pairs import SevenShiftedPairs
 	from rules.thirteen_orphans import ThirteenOrphans
 	from rules.two_kongs import TwoKongs
@@ -37,8 +39,10 @@ else:
 	from mahjonggscoring.rules.melded_hand import MeldedHand
 	from mahjonggscoring.rules.melded_kong import MeldedKong
 	from mahjonggscoring.rules.no_honor_tiles import NoHonorTiles
+	from mahjonggscoring.rules.prevalent_wind import PrevalentWind
 	from mahjonggscoring.rules.pung_of_terminals_or_honors import PungOfTerminalsOrHonors
 	from mahjonggscoring.rules.pure_terminal_chows import PureTerminalChows
+	from mahjonggscoring.rules.seat_wind import SeatWind
 	from mahjonggscoring.rules.seven_shifted_pairs import SevenShiftedPairs
 	from mahjonggscoring.rules.thirteen_orphans import ThirteenOrphans
 	from mahjonggscoring.rules.two_kongs import TwoKongs
@@ -104,7 +108,7 @@ class RuleList:
 		#OneVoidedSuit: OneVoidedSuit.points,\
 		#OutsideHand: OutsideHand.points,\
 		OutWithReplacementTile: OutWithReplacementTile.points,\
-		#PrevalentWind: PrevalentWind.points,\
+		PrevalentWind: PrevalentWind.points,\
 		PungOfTerminalsOrHonors: PungOfTerminalsOrHonors.points,\
 		#PureDoubleChow: PureDoubleChow.points\
 		#PureShiftedChows: PureShiftedChows.points,\
@@ -115,7 +119,7 @@ class RuleList:
 		#QuadrupleChow: QuadrupleChow.points,\
 		#ReversibleTiles: ReversibleTiles.points,\
 		RobbingTheKong: RobbingTheKong.points,\
-		#SeatWind: SeatWind.points,\
+		SeatWind: SeatWind.points,\
 		SelfDrawn: SelfDrawn.points,\
 		#SevenPairs: SevenPairs.points,\
 		SevenShiftedPairs: SevenShiftedPairs.points,\
