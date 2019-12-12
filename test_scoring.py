@@ -33,7 +33,7 @@ class TestScoringHand2(unittest2.TestCase):
 	def test_rules(self):
 		rule_names = list(self.examination.criteria)
 		rule_names.sort()
-		self.assertListEqual(rule_names,["Melded Kong", "No Honor Tiles", "Pung of Terminals and Honors", "Reversible Tiles", "Self-Drawn"])
+		self.assertListEqual(rule_names,["Melded Kong", "No Honor Tiles", "Pung of Terminals or Honors", "Reversible Tiles", "Self-Drawn"])
 
 class TestScoringHand3(unittest2.TestCase):
 	def setUp(self):
@@ -46,7 +46,7 @@ class TestScoringHand3(unittest2.TestCase):
 	def test_rules(self):
 		rule_names = list(self.examination.criteria)
 		rule_names.sort()
-		self.assertListEqual(rule_names,["Half Flush", "Melded Kong", "Pung of Terminals and Honors", "Pure Double Chow", "Short Straight"])
+		self.assertListEqual(rule_names,["Half Flush", "Melded Kong", "Pung of Terminals or Honors", "Pure Double Chow", "Short Straight"])
 
 class TestScoringHand4(unittest2.TestCase):
 	def setUp(self):
