@@ -19,6 +19,9 @@ class ThirteenOrphans:
 		codes = list(map(get_codes, self.hand.special[0].tiles))
 		return codes
 	
+	def examine_special_hand(self):
+		return not self.hand.standardhand
+	
 	def examine_correct_sum(self):
 		correct_sum = True if self.hand.tilecount == 14 else False
 		return correct_sum
@@ -51,9 +54,10 @@ class ThirteenOrphans:
 		return no_simples
 			
 	def evaluate(self):
+		special_hand = self.examine_special_hand()
 		correct_sum = self.examine_correct_sum()
 		unique_tiles = self.examine_unique_tiles()
 		honors_terminals = self.examine_honors_terminals()
 		
-		passed = all([correct_sum, unique_tiles, honors_terminals])
-		return passed
+		thirteen_orphans = all([special_hand, correct_sum, unique_tiles, honors_terminals])
+		return thirteen_orphans

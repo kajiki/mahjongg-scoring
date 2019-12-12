@@ -28,6 +28,9 @@ class SevenShiftedPairs:
 		ranks = list(map(get_ranks, self.hand.special[0].tiles))
 		ranks.sort()
 		return ranks
+	
+	def examine_special_hand(self):
+		return not self.hand.standardhand
 		
 	def examine_correct_sum(self):
 		correct_sum = True if self.hand.tilecount == 14 else False
@@ -42,6 +45,7 @@ class SevenShiftedPairs:
 		return all_pairs
 		
 	def examine_suit_sequence(self):
+		suit_sequence = False
 		try:
 			first_suit = self.hand.special[0].tiles[0].suit
 			same_suit = all(tile.suit == first_suit for tile in self.hand.special[0].tiles)
@@ -51,17 +55,16 @@ class SevenShiftedPairs:
 				suit_sequence = Tools.check_sequence(ranks)
 			else:
 				suit_sequence = False
-		except AttributeError: #means tile.suit isn't set
-			suit_sequence = False
-		except IndexError: #means hand.special is empty
-			suit_sequence = False
+		except AttributeError: pass #means tile.suit isn't set
+		except IndexError: pass #means hand.special is empty
 			
 		return suit_sequence
 	
 	def evaluate(self):
+		special_hand = self.examine_special_hand()
 		correct_sum = self.examine_correct_sum()
 		all_pairs = self.examine_all_pairs()
 		suit_sequence = self.examine_suit_sequence()
 		
-		passed = all([correct_sum, all_pairs, suit_sequence])
-		return passed
+		seven_shifted_pairs = all([special_hand, correct_sum, all_pairs, suit_sequence])
+		return seven_shifted_pairs

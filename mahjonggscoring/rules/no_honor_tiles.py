@@ -18,7 +18,6 @@ class NoHonorTiles:
 				all_tiles.append(tile)
 	
 		no_honors = not any(getattr(tile, "tile_type", None) == "honor" for tile in all_tiles)
-		
 		return no_honors
 		
 	def evaluate(self):

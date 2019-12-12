@@ -31,14 +31,11 @@ class MeldedKong:
 			
 		#all tilesets are melded (ignoring the pair)
 		elif getattr(self.hand, "concealed", None) == None or getattr(self.hand, "concealed", None) == False:
-			if len(self.hand.kongs) == limit_value:
-				one_melded = True
-			else:
-				one_melded = False
+			if len(self.hand.kongs) == limit_value: one_melded = True
+			else: one_melded = False
 				
 		#the hand is concealed
-		else:
-			one_melded = False
+		else: one_melded = False
 		
 		return one_melded
 			

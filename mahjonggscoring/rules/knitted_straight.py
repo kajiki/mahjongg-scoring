@@ -41,8 +41,8 @@ class KnittedStraight:
 		knitted_sets = self.examine_knitted_sets()
 		mixed_straight = self.examine_mixed_straight()
 		
-		passed = all([standard_hand, knitted_sets, mixed_straight])
-		return passed
+		knitted_straight = all([standard_hand, knitted_sets, mixed_straight])
+		return knitted_straight
 	
 	
 		
