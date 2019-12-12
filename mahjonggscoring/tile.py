@@ -11,9 +11,7 @@ class Tile:
 	
 		self.code = tile
 		self.name = ""
-		self.last_tile = False #Use going_out, a mutable default argument
-		
-		#self.going_out = "" if going_out is None else going_out
+		self.last_tile = False
 	
 		#rank is first character if single digit 1-9
 		if tile[:1] and tile[:1].isdigit():

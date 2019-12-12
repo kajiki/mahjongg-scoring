@@ -9,7 +9,7 @@ class Constants:
 	WINDS = {\
 		"E": "east wind", "東": "east wind",\
 		"S": "south wind", "南": "south wind",\
-		"W": "west_wind", "西": "west wind",\
+		"W": "west wind", "西": "west wind",\
 		"N": "north wind", "北": "north wind"\
 	}
 
