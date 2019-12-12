@@ -29,3 +29,6 @@ class TestNotBigFourWinds(unittest2.TestCase):
 		self.examination = BigFourWinds(hand)
 		self.passed = self.examination.evaluate()
 		self.assertFalse(self.passed)
+
+if __name__ == '__main__':
+	unittest2.main()

@@ -87,3 +87,6 @@ class TestRobbingTheKong(unittest2.TestCase):
 		self.examination = RobbingTheKong(hand)
 		self.passed = self.examination.evaluate()
 		self.assertTrue(self.passed)
+
+if __name__ == '__main__':
+	unittest2.main()

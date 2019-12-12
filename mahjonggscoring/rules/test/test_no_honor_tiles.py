@@ -42,3 +42,6 @@ class TestNotNoHonorTiles(unittest2.TestCase):
 		self.examination = NoHonorTiles(hand)
 		self.passed = self.examination.evaluate()
 		self.assertFalse(self.passed)
+
+if __name__ == '__main__':
+	unittest2.main()
