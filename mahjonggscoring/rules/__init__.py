@@ -10,10 +10,12 @@ if __package__.find(".") == -1:
 	from rules.knitted_straight import KnittedStraight
 	from rules.melded_hand import MeldedHand
 	from rules.melded_kong import MeldedKong
+	from rules.nine_gates import NineGates
 	from rules.no_honor_tiles import NoHonorTiles
 	from rules.prevalent_wind import PrevalentWind
 	from rules.pung_of_terminals_or_honors import PungOfTerminalsOrHonors
 	from rules.pure_terminal_chows import PureTerminalChows
+	from rules.reversible_tiles import ReversibleTiles
 	from rules.seat_wind import SeatWind
 	from rules.seven_shifted_pairs import SevenShiftedPairs
 	from rules.thirteen_orphans import ThirteenOrphans
@@ -38,10 +40,12 @@ else:
 	from mahjonggscoring.rules.knitted_straight import KnittedStraight
 	from mahjonggscoring.rules.melded_hand import MeldedHand
 	from mahjonggscoring.rules.melded_kong import MeldedKong
+	from mahjonggscoring.rules.nine_gates import NineGates
 	from mahjonggscoring.rules.no_honor_tiles import NoHonorTiles
 	from mahjonggscoring.rules.prevalent_wind import PrevalentWind
 	from mahjonggscoring.rules.pung_of_terminals_or_honors import PungOfTerminalsOrHonors
 	from mahjonggscoring.rules.pure_terminal_chows import PureTerminalChows
+	from mahjonggscoring.rules.reversible_tiles import ReversibleTiles
 	from mahjonggscoring.rules.seat_wind import SeatWind
 	from mahjonggscoring.rules.seven_shifted_pairs import SevenShiftedPairs
 	from mahjonggscoring.rules.thirteen_orphans import ThirteenOrphans
@@ -103,7 +107,7 @@ class RuleList:
 		#MixedShiftedPungs: MixedShiftedPungs.points,\
 		#MixedStraight: MixedStraight.points,\
 		#MixedTripleChow: MixedTripleChow.points,\
-		#NineGates: NineGates.points,\
+		NineGates: NineGates.points,\
 		NoHonorTiles: NoHonorTiles.points,\
 		#OneVoidedSuit: OneVoidedSuit.points,\
 		#OutsideHand: OutsideHand.points,\
@@ -117,7 +121,7 @@ class RuleList:
 		PureTerminalChows: PureTerminalChows.points,\
 		#PureTripleChow: PureTripleChow.points,\
 		#QuadrupleChow: QuadrupleChow.points,\
-		#ReversibleTiles: ReversibleTiles.points,\
+		ReversibleTiles: ReversibleTiles.points,\
 		RobbingTheKong: RobbingTheKong.points,\
 		SeatWind: SeatWind.points,\
 		SelfDrawn: SelfDrawn.points,\
