@@ -21,6 +21,7 @@ if __package__.find(".") == -1:
 	from rules.seven_shifted_pairs import SevenShiftedPairs
 	from rules.thirteen_orphans import ThirteenOrphans
 	from rules.three_kongs import ThreeKongs
+	from rules.two_concealed_kongs import TwoConcealedKongs
 	from rules.two_kongs import TwoKongs
 	from rules.winning_tile import EdgeWait
 	from rules.winning_tile import ClosedWait
@@ -53,6 +54,7 @@ else:
 	from mahjonggscoring.rules.seven_shifted_pairs import SevenShiftedPairs
 	from mahjonggscoring.rules.thirteen_orphans import ThirteenOrphans
 	from mahjonggscoring.rules.three_kongs import ThreeKongs
+	from mahjonggscoring.rules.two_concealed_kongs import TwoConcealedKongs
 	from mahjonggscoring.rules.two_kongs import TwoKongs
 	from mahjonggscoring.rules.winning_tile import EdgeWait
 	from mahjonggscoring.rules.winning_tile import ClosedWait
@@ -140,7 +142,7 @@ class RuleList:
 		#TriplePung: TriplePung.points,\
 		#ThreeSuitedTerminalChows: ThreeSuitedTerminalChows.points,\
 		#TwoConcealedPungs: TwoConcealedPungs.points,\
-		#TwoConcealedKongs: TwoConcealedKongs.points,\
+		TwoConcealedKongs: TwoConcealedKongs.points,\
 		#TwoDragonPungs: TwoDragonPungs.points,\
 		TwoKongs: TwoKongs.points,\
 		#TwoTerminalChows: TwoTerminalChows.points,\
