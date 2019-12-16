@@ -9,22 +9,22 @@ from mahjonggscoring import Scoring
 
 class TestScoringHand1(unittest2.TestCase):
 	def setUp(self):
-		data = [["2/", "5/", "8/"], ["1#", "4#", "7#"], ["3●", "6●", "9●"], ["1/", "2/", "3/"], ["4/", "4/"]]
-		hand = Hand(data,{"winning tile": "Self-Drawn"})
+		data = [["B", "B"], ["3#", "4#", "5#"], ["6#", "7#", "8#"], ["6#", "7#", "8#"], ["W", "W", "W", "W"]]
+		hand = Hand(data, {"concealed": [False, True, False, False, False], "prevalent wind": "E", "seat wind": "S"})
 		self.examination = Scoring(hand)
-		
+	
 	def test_score(self):
-		self.assertEqual(self.examination.score, 15)
+		self.assertEqual(self.examination.score, 11)
 	
 	def test_rules(self):
 		rule_names = list(self.examination.criteria)
 		rule_names.sort()
-		self.assertListEqual(rule_names,["All Chows", "Knitted Straight", "Self-Drawn"])
+		self.assertListEqual(rule_names,["Half Flush", "Melded Kong", "Pung of Terminals or Honors", "Pure Double Chow", "Short Straight"])
 
 class TestScoringHand2(unittest2.TestCase):
 	def setUp(self):
 		data = [["4/", "5/", "6/"], ["8●", "8●", "8●", "8●"], ["9●", "9●", "9●"], ["3●", "4●", "5●"], ["6/", "6/"]]
-		hand = Hand(data, {"winning tile": "Self-Drawn"})
+		hand = Hand(data, {"winning tile": "Self-Drawn", "prevalent wind": "E", "seat wind": "E"})
 		self.examination = Scoring(hand)
 		
 	def test_score(self):
@@ -37,16 +37,17 @@ class TestScoringHand2(unittest2.TestCase):
 
 class TestScoringHand3(unittest2.TestCase):
 	def setUp(self):
-		hand = Hand([["B", "B"], ["3#", "4#", "5#"], ["6#", "7#", "8#"], ["6#", "7#", "8#"], ["W", "W", "W", "W"]])
+		data = [["2/", "5/", "8/"], ["1#", "4#", "7#"], ["3●", "6●", "9●"], ["1/", "2/", "3/"], ["4/", "4/"]]
+		hand = Hand(data,{"winning tile": "Self-Drawn", "prevalent wind": "E", "seat wind": "E"})
 		self.examination = Scoring(hand)
-	
+		
 	def test_score(self):
-		self.assertEqual(self.examination.score, 11)
+		self.assertEqual(self.examination.score, 15)
 	
 	def test_rules(self):
 		rule_names = list(self.examination.criteria)
 		rule_names.sort()
-		self.assertListEqual(rule_names,["Half Flush", "Melded Kong", "Pung of Terminals or Honors", "Pure Double Chow", "Short Straight"])
+		self.assertListEqual(rule_names,["All Chows", "Knitted Straight", "Self-Drawn"])
 
 class TestScoringHand4(unittest2.TestCase):
 	def setUp(self):
