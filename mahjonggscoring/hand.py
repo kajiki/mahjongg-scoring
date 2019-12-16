@@ -47,8 +47,5 @@ class Hand:
 			elif tileset.type == "knitted": self.knitted.append(tileset)
 			elif tileset.type == "special": self.special.append(tileset)
 		
-		#for arr in [self.tilesets, self.pair, self.pungs, self.kongs, self.chows, self.knitted, self.special]:
-		#	arr = tuple(arr)
-		
 		standard_sets = self.kongs + self.pungs + self.chows + self.knitted
 		self.standardhand = True if len(standard_sets) == 4 and len(self.pair) == 1 and len(self.special) == 0 else False

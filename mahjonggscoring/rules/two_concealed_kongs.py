@@ -49,7 +49,3 @@ class TwoConcealedKongs:
 		
 		two_concealed_kongs = all([standard_hand, two_concealed])
 		return two_concealed_kongs
-		
-		#first, find all concealed sets. if there are two kongs in there, we're go.
-		#the entire hand may be concealed.
-		#if the hand is melded, then it's easy, nothing there to look for.
