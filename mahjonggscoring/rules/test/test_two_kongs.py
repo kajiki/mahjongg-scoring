@@ -3,7 +3,33 @@ from mahjonggscoring.rules import TwoKongs
 from mahjonggscoring import Hand
 
 #Both kongs are melded.
-class TestTwoKongs(unittest2.TestCase):
+class TestTwoKongsPartial(unittest2.TestCase):
+	def setUp(self):
+		data = [["W", "W", "W"], ["8#", "8#", "8#", "8#"], ["3#", "3#", "3#", "3#"], ["2/", "2/", "2/"], ["3●", "3●"]]
+		hand = Hand(data, {"concealed": [False, False, False, True, False]})
+		self.examination = TwoKongs(hand)
+		self.passed = self.examination.evaluate()
+
+	def test_passed(self):
+		self.assertTrue(self.passed)
+	
+	def test_points(self):
+		self.assertEqual(self.examination.points, 4)
+		
+class TestTwoKongsExplicit(unittest2.TestCase):
+	def setUp(self):
+		data = [["W", "W", "W"], ["8#", "8#", "8#", "8#"], ["3#", "3#", "3#", "3#"], ["2/", "2/", "2/"], ["3●", "3●"]]
+		hand = Hand(data, {"concealed": False})
+		self.examination = TwoKongs(hand)
+		self.passed = self.examination.evaluate()
+
+	def test_passed(self):
+		self.assertTrue(self.passed)
+	
+	def test_points(self):
+		self.assertEqual(self.examination.points, 4)
+		
+class TestTwoKongsImplicit(unittest2.TestCase):
 	def setUp(self):
 		data = [["W", "W", "W"], ["8#", "8#", "8#", "8#"], ["3#", "3#", "3#", "3#"], ["2/", "2/", "2/"], ["3●", "3●"]]
 		hand = Hand(data)

@@ -32,14 +32,11 @@ class TwoKongs:
 			
 		#all tilesets are melded (ignoring the pair)
 		elif getattr(self.hand, "concealed", None) == None or getattr(self.hand, "concealed", None) == False:
-			if len(self.hand.kongs) == limit_value:
-				two_melded = True
-			else:
-				two_melded = False
+			if len(self.hand.kongs) == limit_value: two_melded = True
+			else: two_melded = False
 				
 		#the hand is concealed
-		else:
-			two_melded = False
+		else: two_melded = False
 		
 		return two_melded
 			
@@ -47,6 +44,6 @@ class TwoKongs:
 		standard_hand = self.examine_standard_hand()
 		two_melded = self.examine_two_melded()
 		
-		melded_kong = all([standard_hand, two_melded])
-		return melded_kong
+		two_kongs = all([standard_hand, two_melded])
+		return two_kongs
 			
