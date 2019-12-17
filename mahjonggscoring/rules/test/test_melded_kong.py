@@ -2,7 +2,33 @@ import unittest2
 from mahjonggscoring.rules import MeldedKong
 from mahjonggscoring import Hand
 
-class TestMeldedKong(unittest2.TestCase):
+class TestMeldedKongPartial(unittest2.TestCase):
+	def setUp(self):
+		data = [["6/", "6/", "6/", "6/"], ["2/", "3/", "4/"], ["F", "F", "F"], ["2/", "3/", "4/"], ["8/", "8/"]]
+		hand = Hand(data, {"concealed": [False, True, False, False, False]})
+		self.examination = MeldedKong(hand)
+		self.passed = self.examination.evaluate()
+	
+	def test_passed(self):
+		self.assertTrue(self.passed)
+	
+	def test_points(self):
+		self.assertEqual(self.examination.points, 1)
+
+class TestMeldedKongExplicit(unittest2.TestCase):
+	def setUp(self):
+		data = [["6/", "6/", "6/", "6/"], ["2/", "3/", "4/"], ["F", "F", "F"], ["2/", "3/", "4/"], ["8/", "8/"]]
+		hand = Hand(data, {"concealed": False})
+		self.examination = MeldedKong(hand)
+		self.passed = self.examination.evaluate()
+	
+	def test_passed(self):
+		self.assertTrue(self.passed)
+	
+	def test_points(self):
+		self.assertEqual(self.examination.points, 1)
+
+class TestMeldedKongImplicit(unittest2.TestCase):
 	def setUp(self):
 		data = [["6/", "6/", "6/", "6/"], ["2/", "3/", "4/"], ["F", "F", "F"], ["2/", "3/", "4/"], ["8/", "8/"]]
 		hand = Hand(data)
