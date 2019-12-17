@@ -5,6 +5,7 @@ if __package__.find(".") == -1:
 	from rules.big_four_winds import BigFourWinds
 	from rules.big_three_dragons import BigThreeDragons
 	from rules.concealed_hand import ConcealedHand
+	from rules.concealed_kong import ConcealedKong
 	from rules.four_kongs import FourKongs
 	from rules.full_flush import FullFlush
 	from rules.fully_concealed_hand import FullyConcealedHand
@@ -38,6 +39,7 @@ else:
 	from mahjonggscoring.rules.big_four_winds import BigFourWinds
 	from mahjonggscoring.rules.big_three_dragons import BigThreeDragons
 	from mahjonggscoring.rules.concealed_hand import ConcealedHand
+	from mahjonggscoring.rules.concealed_kong import ConcealedKong
 	from mahjonggscoring.rules.four_kongs import FourKongs
 	from mahjonggscoring.rules.full_flush import FullFlush
 	from mahjonggscoring.rules.fully_concealed_hand import FullyConcealedHand
@@ -84,7 +86,7 @@ class RuleList:
 		#ChickenHand: ChickenHand.points,\
 		ClosedWait: ClosedWait.points,\
 		ConcealedHand: ConcealedHand.points,\
-		#ConcealedKong: ConcealedKong.points,\
+		ConcealedKong: ConcealedKong.points,\
 		#DoublePung: DoublePung.points,\
 		#DragonPung: DragonPung.points,\
 		EdgeWait: EdgeWait.points,\
