@@ -6,6 +6,7 @@ if __package__.find(".") == -1:
 	from rules.big_three_dragons import BigThreeDragons
 	from rules.concealed_hand import ConcealedHand
 	from rules.concealed_kong import ConcealedKong
+	from rules.four_concealed_pungs import FourConcealedPungs
 	from rules.four_kongs import FourKongs
 	from rules.full_flush import FullFlush
 	from rules.fully_concealed_hand import FullyConcealedHand
@@ -21,6 +22,7 @@ if __package__.find(".") == -1:
 	from rules.seat_wind import SeatWind
 	from rules.seven_shifted_pairs import SevenShiftedPairs
 	from rules.thirteen_orphans import ThirteenOrphans
+	from rules.three_concealed_pungs import ThreeConcealedPungs
 	from rules.three_kongs import ThreeKongs
 	from rules.two_concealed_kongs import TwoConcealedKongs
 	from rules.two_kongs import TwoKongs
@@ -40,6 +42,7 @@ else:
 	from mahjonggscoring.rules.big_three_dragons import BigThreeDragons
 	from mahjonggscoring.rules.concealed_hand import ConcealedHand
 	from mahjonggscoring.rules.concealed_kong import ConcealedKong
+	from mahjonggscoring.rules.four_concealed_pungs import FourConcealedPungs
 	from mahjonggscoring.rules.four_kongs import FourKongs
 	from mahjonggscoring.rules.full_flush import FullFlush
 	from mahjonggscoring.rules.fully_concealed_hand import FullyConcealedHand
@@ -55,6 +58,7 @@ else:
 	from mahjonggscoring.rules.seat_wind import SeatWind
 	from mahjonggscoring.rules.seven_shifted_pairs import SevenShiftedPairs
 	from mahjonggscoring.rules.thirteen_orphans import ThirteenOrphans
+	from mahjonggscoring.rules.three_concealed_pungs import ThreeConcealedPungs
 	from mahjonggscoring.rules.three_kongs import ThreeKongs
 	from mahjonggscoring.rules.two_concealed_kongs import TwoConcealedKongs
 	from mahjonggscoring.rules.two_kongs import TwoKongs
@@ -92,7 +96,7 @@ class RuleList:
 		EdgeWait: EdgeWait.points,\
 		FourKongs: FourKongs.points,\
 		#FourPureShiftedPungs: FourPureShiftedPungs.points,\
-		#FourConcealedPungs: FourConcealedPungs.points,\
+		FourConcealedPungs: FourConcealedPungs.points,\
 		#FourShiftedChows: FourShiftedChows.points,\
 		FullFlush: FullFlush.points,\
 		FullyConcealedHand: FullyConcealedHand.points,\
@@ -138,7 +142,7 @@ class RuleList:
 		#ShortStraight: ShortStraight.points,\
 		SingleWait: SingleWait.points,\
 		ThirteenOrphans: ThirteenOrphans.points,\
-		#ThreeConcealedPungs: ThreeConcealedPungs.points,\
+		ThreeConcealedPungs: ThreeConcealedPungs.points,\
 		#TileHog: TileHog.points,\
 		ThreeKongs: ThreeKongs.points,\
 		#TriplePung: TriplePung.points,\
